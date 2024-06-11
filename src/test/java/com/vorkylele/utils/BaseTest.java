@@ -4,6 +4,8 @@ import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 
+import static com.vorkylele.utils.Utils.removeSoftAssert;
+
 @DisplayName("Test Configuration")
 public class BaseTest {
 
@@ -16,6 +18,6 @@ public class BaseTest {
     @DisplayName("Configuration after the test")
     @AfterEach
     public void afterTest() {
-
+        removeSoftAssert();
     }
 }

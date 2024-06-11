@@ -2,12 +2,13 @@ package com.vorkylele.api.dto.user.create.response;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.vorkylele.api.dto.user.create.request.CreateUserRequestDto;
-import com.vorkylele.api.dto.user.create.response.partial.UserDetailsPartialDto;
 import com.vorkylele.steps.UserSteps;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 
 /**
  * <h3>Deserialization of the method response body {@link UserSteps#createUser(CreateUserRequestDto)}</h3>
@@ -19,14 +20,11 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateUserResponseDto {
+public class CreateUserInvalidResponseDto {
 
     @JsonProperty("success")
     private Boolean success;
 
-    @JsonProperty("details")
-    private UserDetailsPartialDto details;
-
     @JsonProperty("message")
-    private String message;
+    private List<String> listMessage;
 }
